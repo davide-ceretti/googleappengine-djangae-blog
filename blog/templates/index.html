@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="posts">
+    <h1 class="content-subhead">Recent posts</h1>
+
+    <!-- A single blog post -->
+    {% for object in object_list %}
+    <section class="post">
+        <header class="post-header">
+            <h2 class="post-title">{{ object.title }}</h2>
+            <p class="post-meta">
+                {{ object.created_at }}
+                {% if is_admin %}
+                    <a href="{% url 'article_admin_update' object.id %}">Edit</a>,
+                    <a href="{% url 'article_admin_delete' object.id %}">Delete</a>
+                {% endif %}
+            </p>
+        </header>
+
+        <div class="post-description">
+            <p>
+                {{ object.body|linebreaks }}
+            </p>
+        </div>
+    </section>
+    {% empty %}
+        <p>This blog looks empty!</p>
+    {% endfor %}
+</div>
+{% endblock %}
