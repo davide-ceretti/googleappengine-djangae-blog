@@ -28,7 +28,7 @@ Deploy
 Test
 ----
 
-TODO
+    python manage.py test
 
 
 Local shell
