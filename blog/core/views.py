@@ -58,7 +58,6 @@ class LogoutView(View):
     A simple logout page that uses Google App Engine authentication
     """
     def get(self, request):
-        raise NotImplementedError
         index = reverse('index')
         url = users.create_logout_url(index)
         return HttpResponseRedirect(url)
