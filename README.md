@@ -20,6 +20,10 @@ Run locally
 * App @ http://localhost:8000
 * DevEngine @ http://localhost:8001
 
+Deploy
+------
+
+    appcfg.py update .
 
 Test
 ----
@@ -27,7 +31,7 @@ Test
 TODO
 
 
-Shell
------
+Local shell
+-----------
 
-TODO
+     python manage.py shell
