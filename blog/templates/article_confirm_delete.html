@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>Are you sure you want to delete article <strong>"{{ object.title }}"</strong>?</p>
+<form class="pure-form pure-form-stacked" method='post'>
+    {% csrf_token %}
+    <a class="pure-button pure-button-primary" href={% url 'index' %}>No</a>
+    <input class="pure-button pure-button-primary" type='submit' value='Yes, delete it please' />
+</form>
+{% endblock %}

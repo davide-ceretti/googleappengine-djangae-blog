@@ -102,13 +102,10 @@ class ArticleAdminDeleteView(AdminRequiredMixin, BlogMixin, DeleteView):
     Delete the article with a given key
     """
     model = Article
+    template_name = 'article_confirm_delete.html'
 
     def get_success_url(self):
         return reverse('index')
-
-    def get(self, request, *args, **kwargs):
-        # For simplicity we delete on get requests (bad shortcut)
-        return self.delete(request, *args, **kwargs)
 
 
 class ArticleAdminUpdateView(AdminRequiredMixin, BlogMixin, UpdateView):
