@@ -26,6 +26,6 @@ urlpatterns = patterns(
 if not settings.DEBUG:
     urlpatterns += patterns(
         '',
-        url(r'^500/$', TemplateView.as_view(template_name='500.html')),
-        url(r'^404/$', TemplateView.as_view(template_name='404.html')),
+        url(r'^500/$', views.FiveOO.as_view()),
+        url(r'^404/$', views.FourOFour.as_view())
     )

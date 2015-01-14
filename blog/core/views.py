@@ -1,5 +1,5 @@
 from django.views.generic import (
-    ListView, View, DeleteView, UpdateView, CreateView
+    ListView, View, DeleteView, UpdateView, CreateView, TemplateView
 )
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
@@ -41,6 +41,14 @@ class AdminRequiredMixin(object):
             return HttpResponseRedirect(url)
         return super(AdminRequiredMixin, self).dispatch(
             request, *args, **kwargs)
+
+
+class FourOFour(BlogMixin, TemplateView):
+    template_name = '404.html'
+
+
+class FiveOO(BlogMixin, TemplateView):
+    template_name = '500.html'
 
 
 class LoginView(View):
