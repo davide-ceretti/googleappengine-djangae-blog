@@ -2,7 +2,7 @@ googleappengine-djangae-blog
 ============================
 
 A simple blog running on Google App Engine via Djangae.
-Project in development
+The project is deployed at https://dav-ceretti.appspot.com/.
 
 
 Install
